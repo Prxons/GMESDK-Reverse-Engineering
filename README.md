@@ -80,7 +80,7 @@ __int64 GMEWWisePlugin_SetAudioStreamProfile_0(unsigned int a1) {
 
 `GMESDK_SetAudioStreamProfile` 在 gmesdk.dll 中最终调用到 `AppRoom::PrepareEncParam`，该函数解析一个硬编码的 JSON 配置字符串。
 
-**JSON 配置数据地址**: `0x14cbba70`
+**JSON 配置数据地址**: `0x14CBBA90`
 
 该 JSON 定义了 6 种类型的音频参数，用于 GME SDK 的编解码器初始化和 DSP 处理。
 
