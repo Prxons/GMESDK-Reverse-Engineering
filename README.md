@@ -85,7 +85,45 @@ __int64 GMEWWisePlugin_SetAudioStreamProfile_0(unsigned int a1) {
 该 JSON 定义了 6 种类型的音频参数，用于 GME SDK 的编解码器初始化和 DSP 处理。
 
 ### 5. 配置文件结构
-
+**RAW JSON:**
+``` js
+{
+  "data": {
+    "biz_id": 1400079347,
+		"conf": [
+      {
+        "audio": {
+          "aec": 1, // 声学回声消除
+          "agc": 1, // 自动增益控制
+          "ans": 1, // 自动噪声抑制
+          "anti_dropout": 1, // 抗丢包策略
+          "au_scheme": 8, // 音频方案优先级编号
+          "channel": 1, // 声道数 1 (单声道), 2 (立体声)
+          "codec_prof": 4129, // 编解码器配置 4106 (SILK), 4108 (SILK), 4129 (Opus)
+          "frame": 40, // 音频帧大小 (ms)
+          "kbps": 30, // 音频编码码率 (kbps)
+          "max_antishake_max": 1000, // 最大抗抖动最大值 (ms)
+          "max_antishake_min": 400, // 最大抗抖动最小值 (ms)
+          "min_antishake": 200, // 最小抗抖动 (ms)
+          "sample_rate": 16000, // 音频采样率 (Hz)
+          "silence_detect": 1 // 静音检测 (VAD)
+        },
+        "is_default": 1, // 是否是默认配置
+        "net": {  // 网络部分
+          "rc_anti_dropout": 0, // 掉线保护
+          "rc_init_delay": 0, // 初始化延迟
+          "rc_max_delay": 0 // 最大延迟
+        },
+        "role": "esports",
+        "type": 1
+      },
+      {
+        ...
+      }
+    ]
+	}
+}
+```
 配置文件包含 6 种音频配置，每种配置定义以下参数：
 
 | Parameter | Type | Description | Possible Values |
